@@ -1,0 +1,99 @@
+.cassettes { margin: 1.5rem; }
+
+.cassette {
+  border-style: solid;
+  border-width: 0.25rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  height: 15.625rem;
+  margin: 1.5rem;
+  position: relative;
+  width: 25rem;
+}
+
+.screws {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.screws span {
+  background: #eeeeee;
+  background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
+  background: -webkit-linear-gradient(top, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
+  background: linear-gradient(to bottom, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  height: 0.875rem;
+  margin: 1px;
+  position: absolute;
+  width: 0.875rem;
+}
+
+.screws span:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+
+.screws span:nth-child(2) {
+  right: 0;
+  top: 0;
+}
+
+.screws span:nth-child(3) {
+  left: 0;
+  bottom: 0;
+}
+
+.screws span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+.screws span:before,
+.screws span:after {
+  background: #777;
+  content: '';
+  height: 0.15rem;
+  left: 50%;
+  position: absolute;
+  transform-origin: center;
+  top: 50%;
+  width: 55%;
+}
+
+.screws span:before {
+  background: #dddddd;
+  background: -moz-linear-gradient(right, #dddddd 0%, #333333 100%);
+  background: -webkit-linear-gradient(right, #dddddd 0%, #333333 100%);
+  background: linear-gradient(to left, #dddddd 0%, #333333 100%);
+  transform: translate(-50%, -50%) rotate(90deg) ;
+}
+
+.screws span:after {
+  background: -moz-linear-gradient(top, #555555 0%, #bbbbbb 100%);
+  background: -webkit-linear-gradient(top, #555555 0%, #bbbbbb 100%);
+  background: linear-gradient(to bottom, #555555 0%, #bbbbbb 100%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.three {
+  background-color: #2b3190;
+  border-color: #212459;
+  opacity: 0.85;
+}
+
+.three .screws span { box-shadow: 0 0 0 0.2rem #212459; }
+
+.nine {
+  background-color: #fbd60b;
+  border-color: #fbd60b;
+}
+
+.nine .screws span { box-shadow: 0 0 0 0.2rem #e9bd20; }
