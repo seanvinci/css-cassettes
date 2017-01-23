@@ -1,15 +1,67 @@
+
+/**** Cassettes Wrapper ****/
+
 .cassettes { margin: 1.5rem; }
 
+
+/**** General Cassette Style ****/
+
 .cassette {
-  border-style: solid;
-  border-width: 0.25rem;
-  border-radius: 0.5rem;
   display: inline-block;
   height: 15.625rem;
   margin: 1.5rem;
   position: relative;
   width: 25rem;
 }
+
+.cassette-outer {
+  border-style: solid;
+  border-width: 0.25rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.cassette-outer .bump {
+  bottom: 0;
+  height: 3.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15rem;
+}
+
+.cassette-outer .bump,
+.cassette-outer .bump:before,
+.cassette-outer .bump:after {
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  position: absolute;
+}
+
+.cassette-outer .bump:before,
+.cassette-outer .bump:after {
+  bottom: -0.2rem;
+  content: '';
+  width: 3.8rem;
+}
+
+.cassette-outer .bump:before {
+  left: -0.45rem;
+  transform: rotate(-80deg);
+  transform-origin: bottom left;
+}
+
+.cassette-outer .bump:after {
+  right: -0.45rem;
+  transform: rotate(80deg);
+  transform-origin: bottom right;
+}
+
+
+/**** Screws *****/
 
 .screws {
   position: absolute;
@@ -20,10 +72,10 @@
 }
 
 .screws span {
-  background: #eeeeee;
-  background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
-  background: -webkit-linear-gradient(top, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
-  background: linear-gradient(to bottom, #eeeeee 0%, #dddddd 20%, #555555 60%, #333333 100%);
+  background: #ddd;
+  background: -moz-linear-gradient(top, #ddd 0%, #ddd 20%, #555 60%, #333 100%);
+  background: -webkit-linear-gradient(top, #ddd 0%, #ddd 20%, #555 60%, #333 100%);
+  background: linear-gradient(to bottom, #ddd 0%, #ddd 20%, #555 60%, #333 100%);
   border-radius: 50%;
   content: '';
   display: inline-block;
@@ -36,60 +88,347 @@
 .screws span:nth-child(1) {
   left: 0;
   top: 0;
+  transform: rotate(-15deg);
 }
 
 .screws span:nth-child(2) {
   right: 0;
   top: 0;
+  transform: rotate(15deg);
 }
 
 .screws span:nth-child(3) {
   left: 0;
   bottom: 0;
+  transform: rotate(15deg);
 }
 
 .screws span:nth-child(4) {
   bottom: 0;
   right: 0;
+  transform: rotate(-15deg);
+}
+
+.screws span:nth-child(5) {
+  bottom: 1.9rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .screws span:before,
 .screws span:after {
   background: #777;
   content: '';
-  height: 0.15rem;
+  height: 0.2rem;
   left: 50%;
   position: absolute;
   transform-origin: center;
   top: 50%;
-  width: 55%;
+  width: 65%;
 }
 
 .screws span:before {
-  background: #dddddd;
-  background: -moz-linear-gradient(right, #dddddd 0%, #333333 100%);
-  background: -webkit-linear-gradient(right, #dddddd 0%, #333333 100%);
-  background: linear-gradient(to left, #dddddd 0%, #333333 100%);
+  background: #ccc;
+  background: -moz-linear-gradient(right, #ccc 0%, #333 100%);
+  background: -webkit-linear-gradient(right, #ccc 0%, #333 100%);
+  background: linear-gradient(to left, #ccc 0%, #333 100%);
   transform: translate(-50%, -50%) rotate(90deg) ;
 }
 
 .screws span:after {
-  background: -moz-linear-gradient(top, #555555 0%, #bbbbbb 100%);
-  background: -webkit-linear-gradient(top, #555555 0%, #bbbbbb 100%);
-  background: linear-gradient(to bottom, #555555 0%, #bbbbbb 100%);
+  background: -moz-linear-gradient(top, #444 0%, #aaa 100%);
+  background: -webkit-linear-gradient(top, #444 0%, #aaa 100%);
+  background: linear-gradient(to bottom, #444 0%, #aaa 100%);
   transform: translate(-50%, -50%);
 }
 
 
+/**** Tabs ****/
+
+.tabs:before,
+.tabs:after,
+.tabs span:before,
+.tabs span:after {
+  background-color: transparent;
+  border-style: solid;
+  border-top-color: transparent;
+  border-width: 0.25rem;
+  content: '';
+  position: absolute;
+  top: -4px;
+}
+
+.tabs:before,
+.tabs span:before {
+  border-radius: 0.35rem;
+  height: 1.25rem;
+  width: 1.7rem;
+}
+
+.tabs:after,
+.tabs span:after {
+  border-radius: 0.3rem;
+  height: 0.9rem;
+  width: 1rem;
+}
+
+.tabs:before { left: 1rem; }
+.tabs:after { left: 2.45rem; }
+.tabs span:before { right: 1rem; }
+.tabs span:after { right: 2.45rem; }
 
 
-.three {
-  background-color: #2b3190;
+/**** Reels ****/
+
+.reel {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.2rem #212459;
+  height: 3rem;
+  display: inline-block;
+  position: absolute;
+  top: 5rem;
+  width: 3rem;
+}
+
+.reel.supply { left: 6rem; }
+
+.reel.takeup { right: 6rem; }
+
+/**** Guides ****/
+
+.guides span {
+  box-shadow: 
+    0 0 0 0.1rem #ccc,
+    0 0 0 0.15rem #666,
+    0 0 0 0.52rem #bbb,
+    0 0 0 0.57rem #666,
+    0 0 0 0.7rem #ccc;
+  opacity: 0.7;
+}
+
+.guides span,
+.guides span:before {
+  background-color: #000;
+  border-radius: 50%;
+  height: 0.5rem;
+  position: absolute;
+  width: 0.5rem;
+}
+
+.guides span:nth-child(1) {
+  bottom: 1.5rem;
+  left: 2rem;
+}
+
+.guides span:nth-child(2) {
+  bottom: 1.5rem;
+  right: 2rem;
+}
+
+.guides span:before,
+.guides span:after {
+  content: '';
+}
+
+.guides span:nth-child(1):before {
+  bottom: 1.5rem;
+  left: -1.2rem;
+}
+
+.guides span:nth-child(2):before {
+  bottom: 1.5rem;
+  right: -1.2rem;
+}
+
+
+/**** Machine Holes ****/
+
+.machine-holes {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.machine-holes:before,
+.machine-holes:after,
+.machine-holes span:before,
+.machine-holes span:after {
+  background-color: #fff;
+  box-shadow: 0 0 0 0.1rem rgba(60, 60, 60, 0.4), inset 0 0 0.3rem 0.01rem #666;
+  content: '';
+  position: absolute;
+}
+
+.machine-holes:before,
+.machine-holes span:before {
+  bottom: 0.9rem;
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.machine-holes:before { left: 8.4rem; }
+.machine-holes span:before { right: 8.4rem; }
+
+.machine-holes:after,
+.machine-holes span:after {
+  border-radius: 50%;
+  bottom: 0.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
+.machine-holes:after { left: 6rem; }
+.machine-holes span:after { right: 6rem; }
+
+
+/**** Machinery ****/
+
+.machinery span {
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  position: absolute;
+}
+
+.machinery span:nth-child(1) {
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5.8rem;
+}
+
+.machinery span:nth-child(2) {
+  bottom: 1.6rem;
+  left: 5.2rem;
+  width: 2.5rem;
+}
+
+.machinery span:nth-child(3) {
+  bottom: 1.6rem;
+  right: 5.2rem;
+  width: 2.5rem;
+}
+
+.machinery span:nth-child(4) {
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+}
+
+.machinery span:before,
+.machinery span:after {
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  content: '';
+  position: absolute;
+}
+
+.machinery span:nth-child(1):before {
+  left: -2rem;
+  transform: rotate(-10deg);
+  transform-origin: bottom center;
+  bottom: -0.2rem;
+  width: 2.2rem;
+}
+
+.machinery span:nth-child(1):after {
+  right: -2rem;
+  transform: rotate(10deg);
+  transform-origin: bottom center;
+  bottom: -0.2rem;
+  width: 2.2rem;
+}
+
+.machinery span:nth-child(2):before {
+  left: 0;
+  transform: rotate(-83deg);
+  transform-origin: bottom left;
+  bottom: -1.4rem;
+  width: 1.6rem;
+}
+
+.machinery span:nth-child(2):after {
+  left: 0.55rem;
+  transform: rotate(95deg);
+  transform-origin: bottom right;
+  bottom: -1.4rem;
+  width: 1.6rem;
+}
+
+.machinery span:nth-child(3):before {
+  right: 0;
+  transform: rotate(83deg);
+  transform-origin: bottom right;
+  bottom: -1.4rem;
+  width: 1.6rem;
+}
+
+.machinery span:nth-child(3):after {
+  left: 0.15rem;
+  transform: rotate(-95deg);
+  transform-origin: top left;
+  bottom: -1.7rem;
+  width: 1.6rem;
+}
+
+.machinery span:nth-child(4):before {
+  left: 0.25rem;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  bottom: -1.4rem;
+  width: 1.35rem;
+}
+
+.machinery span:nth-child(4):after {
+  right: 0.25rem;
+  transform: rotate(90deg);
+  transform-origin: bottom right;
+  bottom: -1.4rem;
+  width: 1.35rem;
+}
+
+
+/**** Individual Cassette Style ****/
+
+.three .cassette-outer {
   border-color: #212459;
-  opacity: 0.85;
+  background-color: rgba(43, 49, 144, 0.8);
 }
 
 .three .screws span { box-shadow: 0 0 0 0.2rem #212459; }
+
+.three .tabs:before,
+.three .tabs:after,
+.three .tabs span:before,
+.three .tabs span:after {
+  border-bottom-color: #212459;
+  border-right-color: #212459;
+  border-left-color: #212459;
+}
+
+.three .cassette-outer .bump,
+.three .cassette-outer .bump:before,
+.three .cassette-outer .bump:after {
+  border-top-color: #212459;
+}
+
+.three .machinery span { border-top-color: #212459; }
+
+.three .machinery span:nth-child(4) { border-top-color: #6e75bf; }
+
+.three .machinery span:before,
+.three .machinery span:after {
+  border-top-color: #212459;
+}
+
+
+
+
+
 
 .nine {
   background-color: #fbd60b;
@@ -97,3 +436,4 @@
 }
 
 .nine .screws span { box-shadow: 0 0 0 0.2rem #e9bd20; }
+
