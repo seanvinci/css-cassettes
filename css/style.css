@@ -31,6 +31,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 15rem;
+  z-index: 2;
 }
 
 .cassette-outer .bump,
@@ -178,22 +179,71 @@
 .tabs span:after { right: 2.45rem; }
 
 
+/**** Tape ****/
+
+.tape {
+  background-color: #392413;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 1;
+}
+
+.supply .tape {
+  height: 12rem;
+  width: 12rem;
+}
+
+.takeup .tape {
+  height: 8rem;
+  width: 8rem;
+}
+
+
 /**** Reels ****/
 
 .reel {
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0.2rem #212459;
-  height: 3rem;
-  display: inline-block;
   position: absolute;
-  top: 5rem;
-  width: 3rem;
+  top: 5.5rem;
 }
 
-.reel.supply { left: 6rem; }
+.reel.supply { left: 5.7rem; }
 
-.reel.takeup { right: 6rem; }
+.reel.takeup { right: 5.7rem; }
+
+/* Inner Reels */
+
+.inner-reel {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 0.2rem #212459,
+    0 0 0 0.6rem #878ec2,
+    0 0 0 0.65rem #212459,
+    0 0 0 1rem #878ec2,
+    0 0 0 1.1rem #212459,
+    0 0 0 1.8rem #878ec2,
+    0 0 0 1.9rem #212459,
+    0 0 0 2.1rem #878ec2;
+  height: 3rem;
+  position: relative;
+  width: 3rem;
+  z-index: 2;
+}
+
+.inner-reel:after {
+/*  border: 0.8rem dotted #212459;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;*/
+}
+
+
+
 
 /**** Guides ****/
 
