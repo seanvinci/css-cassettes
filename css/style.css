@@ -219,29 +219,70 @@
   background-color: #fff;
   border-radius: 50%;
   box-shadow:
-    0 0 0 0.2rem #212459,
-    0 0 0 0.6rem #878ec2,
-    0 0 0 0.65rem #212459,
-    0 0 0 1rem #878ec2,
+    0 0 0 0.2rem #fff,
+    0 0 0 0.4rem #212459,
+    0 0 0 0.8rem #878ec2,
+    0 0 0 0.85rem #212459,
+    0 0 0 1.2rem #878ec2,
+    0 0 0 1.3rem #212459,
+    0 0 0 2rem #878ec2,
     0 0 0 1.1rem #212459,
-    0 0 0 1.8rem #878ec2,
-    0 0 0 1.9rem #212459,
-    0 0 0 2.1rem #878ec2;
+    0 0 0 2.3rem #878ec2,
+    inset 0 0 20px 5px #ddd;
   height: 3rem;
   position: relative;
   width: 3rem;
   z-index: 2;
 }
 
-.inner-reel:after {
-/*  border: 0.8rem dotted #212459;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  height: 100%;
-  width: 100%;*/
+.inner-reel span,
+.inner-reel span:before,
+.inner-reel span:after {
+  background-color: #fff;
+  height: 0.4rem;
+  position: absolute;
+  width: 0.3rem;
 }
 
+.inner-reel span:before,
+.inner-reel span:after {
+  content: '';
+}
+
+.inner-reel span:nth-child(1) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inner-reel span:nth-child(1):before {
+  left: -1.12rem;
+  top: 0.65rem;
+  transform: rotate(-60deg);
+}
+
+.inner-reel span:nth-child(1):after {
+  right: -1.12rem;
+  top: 0.65rem;
+  transform: rotate(60deg);
+}
+
+.inner-reel span:nth-child(2) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inner-reel span:nth-child(2):before {
+  left: -1.12rem;
+  transform: rotate(60deg);
+  top: -0.65rem;
+}
+
+.inner-reel span:nth-child(2):after {
+  right: -1.12rem;
+  transform: rotate(-60deg);
+  top: -0.65rem;
+}
 
 
 
